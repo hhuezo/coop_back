@@ -81,9 +81,9 @@ class SolicitudController extends Controller
         $fiadores = Persona::where('Activo', '=', 1)->where('Socio', '=', 1)->get();
         $tipos = Tipo::get();
 
-        $response = ['solicitantes' => $solicitantes, 'fiadores' => $fiadores, 'tipos' => $tipos];
+        $response = ["value" => "1", "mensaje"=>"con datos",'solicitantes' => $solicitantes];
 
-        return $response;
+        return response()->json($response, 200);
     }
 
 

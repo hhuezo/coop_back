@@ -77,9 +77,9 @@ class SolicitudController extends Controller
 
     public function create()
     {
-        $solicitantes = Persona::where('Activo', '=', 1)->get();
-        $fiadores = Persona::where('Activo', '=', 1)->where('Socio', '=', 1)->get();
-        $tipos = Tipo::get();
+        $solicitantes = Persona::select('Id','Nombre')->where('Activo', '=', 1)->get();
+        //$fiadores = Persona::where('Activo', '=', 1)->where('Socio', '=', 1)->get();
+        //$tipos = Tipo::get();
 
         $response = ["value" => "1", "mensaje"=>"con datos",'solicitantes' => $solicitantes];
 
